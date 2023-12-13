@@ -2,28 +2,35 @@ import React from "react";
 import Button from "./components/Button/button";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
+import SubMenu from "./components/Menu/subMenu";
 
 function App() {
   return (
     <div className="App">
       <div>
-        {" "}
-        <Button>按钮</Button>
-        <Button btnType='primary' size='lg'>
-          按钮
+        <Button>default</Button>
+        <Button btnType="primary" size="lg">
+          primary-large
         </Button>
+        <Button btnType="danger">danger</Button>
         <Button
-          btnType='link'
-          size='sm'
+          btnType="link"
+          size="sm"
           href="http://www.baidu.com"
+          target="_blank"
         >
-          链接按钮
+          baidu
         </Button>
       </div>
-      <Menu defaultIndex={0} onSelect={(index) => console.log(index)}>
-        <MenuItem index={0}>link</MenuItem>
-        <MenuItem index={1}>link</MenuItem>
-        <MenuItem index={2}>link</MenuItem>
+      <hr />
+      <Menu onSelect={(index) => console.log(index)}>
+        <MenuItem>home</MenuItem>
+        <MenuItem>about</MenuItem>
+        <MenuItem>mine</MenuItem>
+        <SubMenu title="dropdown">
+          <MenuItem>dropdown</MenuItem>
+          <MenuItem>dropdown</MenuItem>
+        </SubMenu>
       </Menu>
     </div>
   );
