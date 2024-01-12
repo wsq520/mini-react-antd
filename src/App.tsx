@@ -4,6 +4,7 @@ import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 import Icon from "./components/Icon/icon";
+import Input from "./components/Input";
 
 function App() {
   return (
@@ -33,6 +34,11 @@ function App() {
           <MenuItem>dropdown</MenuItem>
         </SubMenu>
       </Menu>
+      <hr />
+      <Input></Input>
+      <Input disabled></Input>
+      <Input placeholder="请输入密码"></Input>
+      <Input placeholder="请输入地址" prepend='https://' size="sm"></Input>
     </div>
   );
 }
