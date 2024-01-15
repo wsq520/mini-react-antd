@@ -3,13 +3,28 @@ import Button from "./components/Button/button";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
-import Icon from "./components/Icon/icon";
+// import Icon from "./components/Icon/icon";
 import Input from "./components/Input";
+import { Upload } from "./components/Upload/upload";
 
 function App() {
+  const onSuccess = (data: any, file: File) => {
+    console.log("onSuceess:", data, file);
+  };
+  const onError = (data: any, file: File) => {
+    console.log("onError:", data, file);
+  };
+  const checkFileSize = (file: File) => {
+    if (Math.round(file.size / 1024) > 50) {
+      alert("file too big");
+      return false;
+    }
+    return true;
+  };
+
   return (
     <div className="App">
-      <div>
+      {/* <div>
         <Button>default</Button>
         <Button btnType="primary" size="lg">
           primary-large
@@ -38,7 +53,14 @@ function App() {
       <Input></Input>
       <Input disabled></Input>
       <Input placeholder="请输入密码"></Input>
-      <Input placeholder="请输入地址" prepend='https://' size="sm"></Input>
+      <Input placeholder="请输入地址" prepend="https://" size="sm"></Input>
+      <hr /> */}
+      <Upload
+        action="https://jsonplaceholder.typicode.com/posts/"
+        onSuccess={onSuccess}
+        onError={onError}
+        beforeUpload={checkFileSize}
+      ></Upload>
     </div>
   );
 }
