@@ -1,11 +1,11 @@
-import React from "react";
+// import React from "react";
 import Button from "./components/Button/button";
-import Menu from "./components/Menu/menu";
-import MenuItem from "./components/Menu/menuItem";
-import SubMenu from "./components/Menu/subMenu";
-// import Icon from "./components/Icon/icon";
-import Input from "./components/Input";
-import { Upload } from "./components/Upload/upload";
+// import Menu from "./components/Menu/menu";
+// import MenuItem from "./components/Menu/menuItem";
+// import SubMenu from "./components/Menu/subMenu";
+import Icon from "./components/Icon/icon";
+// import Input from "./components/Input";
+import Upload from "./components/Upload/upload";
 
 function App() {
   const onSuccess = (data: any, file: File) => {
@@ -15,10 +15,10 @@ function App() {
     console.log("onError:", data, file);
   };
   const checkFileSize = (file: File) => {
-    if (Math.round(file.size / 1024) > 50) {
-      alert("file too big");
-      return false;
-    }
+    // if (Math.round(file.size / 1024) > 50) {
+    //   alert("file too big");
+    //   return false;
+    // }
     return true;
   };
 
@@ -56,11 +56,19 @@ function App() {
       <Input placeholder="请输入地址" prepend="https://" size="sm"></Input>
       <hr /> */}
       <Upload
-        action="https://jsonplaceholder.typicode.com/posts/"
+        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
         onSuccess={onSuccess}
         onError={onError}
-        beforeUpload={checkFileSize}
-      ></Upload>
+        // beforeUpload={checkFileSize}
+        // name="fileName"
+        // data={{ key: "value" }}
+        drag={true}
+      >
+        {/* <Button btnType="primary">upload file</Button> */}
+        <Icon icon="upload" size="5x" theme="secondary" />
+        <br />
+        <p>Drag file over to upload</p>
+      </Upload>
     </div>
   );
 }
