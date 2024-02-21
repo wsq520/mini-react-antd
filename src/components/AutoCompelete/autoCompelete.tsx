@@ -71,7 +71,7 @@ export const AutoCompelete: FC<AutoCompeleteProps> = (props) => {
   };
 
   return (
-    <div className="viking-auto-complete">
+    <div className="antd-auto-complete">
       <Input
         value={inputValue}
         onChange={handleChange}
@@ -82,3 +82,5 @@ export const AutoCompelete: FC<AutoCompeleteProps> = (props) => {
     </div>
   );
 };
+
+export default AutoCompelete;

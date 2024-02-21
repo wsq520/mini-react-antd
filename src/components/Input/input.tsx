@@ -17,7 +17,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size
 const Input: FC<InputProps> = (props) => {
   const { style, disabled, size, icon, prepend, append, onChange, ...restProps } = props;
 
-  const cnames = classNames('viking-input-wrapper', {
+  const cnames = classNames('antd-input-wrapper', {
     [`input-size-${size}`]: size,
     'is-disabled': disabled,
     'input-group': prepend || append,
@@ -41,14 +41,14 @@ const Input: FC<InputProps> = (props) => {
 
   return (
     <div className={cnames} style={style}>
-      {prepend && <div className="viking-input-group-prepend">{prepend}</div>}
+      {prepend && <div className="antd-input-group-prepend">{prepend}</div>}
       {icon && <div className="icon-wrapper"><Icon icon={icon} title={`title-${icon}`}/></div>}
       <input 
-        className="viking-input-inner"
+        className="antd-input-inner"
         disabled={disabled}
         {...restProps}
       />
-      {append && <div className="viking-input-group-append">{append}</div>}
+      {append && <div className="antd-input-group-append">{append}</div>}
     </div>
   )
 }

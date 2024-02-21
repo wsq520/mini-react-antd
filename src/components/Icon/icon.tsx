@@ -10,7 +10,7 @@ export interface IconProps extends FontAwesomeIconProps {
 
 const Icon: React.FC<IconProps> = (props) => {
   const { className, theme, ...restProps } = props
-  const classes = classNames('viking-icon', className, {
+  const classes = classNames('antd-icon', className, {
     [`icon-${theme}`]: theme
   })
   return (

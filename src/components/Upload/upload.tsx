@@ -171,9 +171,9 @@ const Upload: FC<UploadProps> = (props) => {
   };
 
   return (
-    <div className="viking-upload-component">
+    <div className="antd-upload-component">
       <div
-        className="viking-upload-input"
+        className="antd-upload-input"
         style={{ display: "inline-block" }}
         onClick={handleClick}
       >
@@ -189,7 +189,7 @@ const Upload: FC<UploadProps> = (props) => {
           children
         )}
         <input
-          className="viking-file-input"
+          className="antd-file-input"
           style={{ display: "none" }}
           ref={fileInput}
           onChange={handleFileChange}
